@@ -1,0 +1,65 @@
+body{
+    background-color: #282a36;
+    margin: 0;
+}
+
+h1{
+    margin-bottom: 25px;
+    color: beige;
+    font-size: 2.9rem;
+    font-family: 'Arial Narrow';
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+.square{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: #282a36;
+}
+
+.stage{
+    margin: 0;
+    align-self: center;
+    margin-bottom: #282a36;
+    padding: 0;
+    height: 300px;
+}
+
+.border-bottom{
+    border-bottom: solid 3px #a298b3;
+}
+
+.border-right{
+    border-right: solid 3px #a298b3;
+}
+
+.row, .border-bottom{
+    display: flex;
+    flex-direction: row;
+}
+
+.x, .o{
+    font-size: 3rem;
+    line-height: 100px;
+    position: relative;
+}
+
+.o{
+    color: #4c6ef5;
+}
+
+.x{
+    color: #ef5350;
+}
