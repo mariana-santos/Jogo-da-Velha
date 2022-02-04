@@ -12,16 +12,26 @@ function handleClick (event){
     let square = event.target;
     let position = square.id;
 
-    handleMove(position);
-    updateSquares();
+    if(handleMove(position)){
 
+        updateSquares();
+        setTimeout(() => {
+            //alert('acabou')
+            currentPlayer.innerText = 'ACABOY'
+        }, 10)
+    }else{
+        updateSquares();
+    }
+    
+    
 }
 
 function updateSquares(){
 
     let squares = document.querySelectorAll('.square');
 
-    squares.forEach((square) => {
+    if(!gameOver){
+        squares.forEach((square) => {
         let position = square.id;
         let symbol = board[position];
 
@@ -35,6 +45,9 @@ function updateSquares(){
                 square.innerHTML = '<i class="far fa-circle o"></i>';
             }
         }
-    })
+        })
+    }
+
+    
 
 }
