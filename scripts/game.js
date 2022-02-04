@@ -5,6 +5,10 @@ let formerPlayer = 1;
 
 let gameOver = false;
 
+let playerOneWins = 0;
+let playerTwoWins = 0;
+let velhaWins = 0;
+
 let winStates = [
     [0, 1, 2],
     [3, 4, 5],
@@ -77,19 +81,20 @@ function isOver (){
         if(board[pos0] == board[pos1] &&
         board[pos0] == board[pos2] && board[pos0] != ''){
 
-            updateSquares()
+            //updateSquares()
+            playerTime == 0 ? playerOneWins++ : playerTwoWins++;
+            console.log(playerTime, playerOneWins, playerTwoWins)
             return true;
 
-        }// else if(filledPositions == 9){
+        } else if(filledPositions == 9){
 
-        //     console.log(filledPositions)
-        //     updateSquares()
-        //     return true;
+             console.log(filledPositions)
+             //updateSquares();
+             velhaWins++;
+             return true;
             
-        // }
-
+         }
     }
-
     return false;
 }
 
@@ -109,5 +114,5 @@ function restart(){
         setCurrentPlayer();
     }
 
-    console.log(board)
+    //console.log(board)
 }

@@ -13,17 +13,15 @@ function handleClick (event){
     let position = square.id;
 
     if(handleMove(position)){
-
-        updateSquares();
         setTimeout(() => {
-            //alert('acabou')
-            //currentPlayer.innerText = 'ACABOY'
-        }, 10)
+            setWins();
+            restart();
+        }, 1200)
     }else{
-        updateSquares();
+
     }
     
-    
+    updateSquares()
 }
 
 function updateSquares(){
@@ -53,11 +51,17 @@ function setCurrentPlayer(){
     let currentPlayer = players[playerTime];
     let former = players[formerPlayer];
 
-    currentPlayer.style.background = '#83aefe'
+    currentPlayer.style.background = '#af4de791'
     former.style.background = '#282a36'
 
     // console.log('formerplayer', former)
     // console.log('playertime', playerTime)
     // console.log('currentplayer', currentPlayer)
 
+}
+
+function setWins(){
+    playerOne.innerHTML = playerOneWins;
+    playerTwo.innerHTML = playerTwoWins;
+    velha.innerHTML = velhaWins;
 }

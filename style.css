@@ -84,7 +84,7 @@ h1{
 }
 
 #active{
-    background: #83aefe;
+    background: #af4de791;
 }
 
 .player p{
@@ -98,7 +98,7 @@ button{
     padding: 15px;
     background: #af4de7;
     border: none;
-    color: black;
+    color: white;
     font-size: large;
     font-family: 'arial narrow';
     text-transform: uppercase;
@@ -122,4 +122,10 @@ button:hover{
 
 .icon-o{
     color: #ef5350;
+}
+
+@media screen and (max-width: 700px) {
+    .container{
+        flex-direction: column;
+    }
 }
