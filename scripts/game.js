@@ -49,13 +49,27 @@ function isOver (){
         let pos1 = sequence[1];
         let pos2 = sequence[2];
 
-        console.log(board[pos0], board[pos1], board[pos2]);
+        //console.log(board[pos0], board[pos1], board[pos2]);
+
+        let filledPositions = 0;
+        board.forEach((item) => {
+            if(item != ''){
+                filledPositions++;
+            }
+        })
 
         if(board[pos0] == board[pos1] &&
         board[pos0] == board[pos2] && board[pos0] != ''){
-            console.log('veio aqui')
+
             updateSquares()
-            return true
+            return true;
+
+        } else if(filledPositions == 9){
+
+            console.log(filledPositions)
+            updateSquares()
+            return true;
+            
         }
 
     }
