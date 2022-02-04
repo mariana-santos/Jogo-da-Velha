@@ -37,13 +37,40 @@
             </div>
 
             <div class="infos">
-                <h1 id="playerTime">Vez de jogador 1</h1>
+                <h1>Placar</h1>
+
+                <div class="player" id="active">
+                    <p>Jogador 1
+                        <i class="fas fa-times icon icon-o"></i>
+                    </p>
+
+                    <p id="playerOne">0</p>
+                </div>
+                
+                <div class="player">
+                    <p>Jogador 2
+                        <i class="far fa-circle icon icon-x"></i>
+                    </p>
+
+                    <p id="playerTwo">0</p>
+                </div>
+
+                <div class="player">
+                    <p>Velha
+                        <i class="fas fa-skull-crossbones icon"></i>
+                    </p>
+
+                    <p id="velha">0</p>
+                </div>
+
+                <button onclick="restart()">Reiniciar</button>
+
             </div>
         </div>
 
         <script src="./scripts/game.js">   </script>
         <script src="./scripts/interface.js">   </script>
 
-        <script>             </script>
+        <script>            </script>
     </body>
 </html>

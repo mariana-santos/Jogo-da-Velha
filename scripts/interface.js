@@ -17,7 +17,7 @@ function handleClick (event){
         updateSquares();
         setTimeout(() => {
             //alert('acabou')
-            currentPlayer.innerText = 'ACABOY'
+            //currentPlayer.innerText = 'ACABOY'
         }, 10)
     }else{
         updateSquares();
@@ -47,7 +47,17 @@ function updateSquares(){
         }
         })
     }
+}
 
-    
+function setCurrentPlayer(){
+    let currentPlayer = players[playerTime];
+    let former = players[formerPlayer];
+
+    currentPlayer.style.background = '#83aefe'
+    former.style.background = '#282a36'
+
+    // console.log('formerplayer', former)
+    // console.log('playertime', playerTime)
+    // console.log('currentplayer', currentPlayer)
 
 }

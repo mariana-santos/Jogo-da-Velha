@@ -1,6 +1,7 @@
 let board = ['', '', '', '', '', '', '', '', ''];
 let symbols = ['x', 'o'];
 let playerTime = 0;
+let formerPlayer = 1;
 
 let gameOver = false;
 
@@ -15,7 +16,11 @@ let winStates = [
     [2, 4, 6]
 ]
 
-let currentPlayer = document.getElementById('playerTime');
+let playerOne = document.getElementById('playerOne');
+let playerTwo = document.getElementById('playerTwo');
+let velha = document.getElementById('velha');
+
+let players = document.getElementsByClassName('player');
 
 function handleMove(position){
 
@@ -28,9 +33,18 @@ function handleMove(position){
 
         if(!gameOver){
 
-            playerTime == 0 ? playerTime = 1 : playerTime = 0;
-            currentPlayer.innerText = `Vez de jogador ${playerTime+1}`;
+            if (playerTime == 0) {
 
+                playerTime = 1;
+                formerPlayer = 0;
+
+            } else {
+                playerTime = 0;
+                formerPlayer = 1;
+            }
+
+            setCurrentPlayer();
+    
         }
 
     }
@@ -51,6 +65,8 @@ function isOver (){
 
         //console.log(board[pos0], board[pos1], board[pos2]);
 
+        updateSquares()
+
         let filledPositions = 0;
         board.forEach((item) => {
             if(item != ''){
@@ -64,16 +80,34 @@ function isOver (){
             updateSquares()
             return true;
 
-        } else if(filledPositions == 9){
+        }// else if(filledPositions == 9){
 
-            console.log(filledPositions)
-            updateSquares()
-            return true;
+        //     console.log(filledPositions)
+        //     updateSquares()
+        //     return true;
             
-        }
+        // }
 
     }
 
     return false;
+}
 
+function restart(){
+
+    let squares = document.querySelectorAll('.square');
+
+    for(let i = 0; i < board.length; i++){
+        board[i] = '';
+        squares.forEach((square) => {
+            if (square.hasChildNodes()) {
+                square.removeChild(square.childNodes[0]);
+              } 
+        })
+        playerTime = 0;
+        formerPlayer = 1;
+        setCurrentPlayer();
+    }
+
+    console.log(board)
 }
