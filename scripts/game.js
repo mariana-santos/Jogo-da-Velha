@@ -109,10 +109,11 @@ function restart(){
                 square.removeChild(square.childNodes[0]);
               } 
         })
-        playerTime = 0;
-        formerPlayer = 1;
-        setCurrentPlayer();
     }
+
+    playerTime = 0;
+    formerPlayer = 1;
+    setCurrentPlayer();
 
     //console.log(board)
 }
